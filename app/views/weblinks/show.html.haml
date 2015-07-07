@@ -1,0 +1,12 @@
+= @weblink.name
+%br/
+= @weblink.description
+%br/
+= @weblink.category
+%br/
+= link_to @weblink.link
+%br/
+= @weblink.user.email
+= link_to "Edit", edit_weblink_path
+= link_to "Delete", @weblink, method: :delete, data: { confirm: "Are you sure"}
+=link_to "Home", root_path
