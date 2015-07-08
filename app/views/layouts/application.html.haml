@@ -1,7 +1,7 @@
 !!!5
 %html
 %head
-	%title Webhun
+	%title Webhub
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
@@ -10,16 +10,12 @@
 		.container
 			.navbar-brand= link_to "Webhub", root_path
 			-if user_signed_in? 
-				%ul.nav.navbar.navbar-right
-					%li= current_user.fullname
-					%li= link_to "Edit Profil", edit_user_registration_path
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to current_user.fullname, edit_user_registration_path
 					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
 			-else
-				%ul.nav.navbar.navbar-right
+				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Sign In", new_user_session_path
 					%li= link_to "Sign Up", new_user_registration_path
-
-
-	/ %p.notice= notice
-	/ %p.alert= alert
+.container
 	= yield

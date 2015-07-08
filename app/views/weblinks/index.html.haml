@@ -1,9 +1,12 @@
-= link_to "Post a website", new_weblink_path
-
-- @weblinks.each do |weblink|
-	%h2= link_to weblink.name, weblink
-	%p= weblink.description
-	%strong= weblink.category
-	%p
-		Submited by
-		= weblink.user.fullname
+.row
+	.pull-right
+		= link_to "Post a website", new_weblink_path
+.row
+	- @weblinks.each do |weblink|
+		.col-lg-3.col-md-4.col-sm-6.col-xs-12
+			%h2= link_to weblink.name, weblink
+			%p= weblink.description
+			%strong= weblink.category
+			%p
+				Submited by
+				= weblink.user.fullname
