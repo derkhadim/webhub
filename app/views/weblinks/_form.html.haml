@@ -1,6 +1,8 @@
 = simple_form_for @weblink, html: { multipart: true} do |f|
 	= f.input :name
 	= f.input :description
-	= f.input :category
-	= f.input :link
+	= f.input :link 
+	= f.select(:category) do
+		- [['Actualité', 'Actualité'], ['People', 'People'], ['Blog', 'Blog'], ['Hotel', 'Hotel'], ['Tech/Informatique', 'Tech/Informatique'], ['Social Netwrok', 'Social Netwrok']].each do |c|
+			= content_tag(:option, c.first, value: c.last)
 	=f.submit
