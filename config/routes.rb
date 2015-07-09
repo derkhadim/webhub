@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :weblinks
+  resources :actus
   root 'weblinks#index'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

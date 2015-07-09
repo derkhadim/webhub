@@ -1,9 +1,6 @@
 .row
-	%div.jumbotron
+	%div.jumbotron.gap
 		%h1 Annuaire des sites web du Sénégal
-		= link_to "Post a website", new_weblink_path, class: "btn btn-primary"
-.row
-	.pull-right
 		= link_to "Post a website", new_weblink_path, class: "btn btn-primary"
 .row
 	- @weblinks.each do |weblink|

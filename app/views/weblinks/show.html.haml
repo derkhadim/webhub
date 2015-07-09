@@ -1,17 +1,21 @@
-.row
+.row.gap
 	.col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12
-		.panel
-			%h3= @weblink.name
-			%br/
-			%p= @weblink.description
-			%br/
-			= @weblink.category
-			%br/
-			%a{:href => "http://"+@weblink.link }= @weblink.link
-			%br/
-			= @weblink.user.email
-			- if user_signed_in?
-				= link_to "Edit", edit_weblink_path
-				= link_to "Delete", @weblink, method: :delete, data: { confirm: "Are you sure"}
-			-else
-			=link_to "Home", root_path
+		.panel.panel-primary
+			.panel-heading
+				.panel-title
+					%h3= @weblink.name
+			.panel-body
+				%p= @weblink.description
+				%br/
+				= @weblink.category
+				%br/
+				%i.glyphicon.glyphicon-eye-open
+				%a{:href => "http://"+@weblink.link }= @weblink.link
+				%br/
+				= @weblink.user.email
+			.panel-footer
+				- if user_signed_in?
+					= link_to "Edit", edit_weblink_path, class: "btn"
+					= link_to "Delete", @weblink, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-danger"
+				-else
+				=link_to " ", root_path, class: "btn glyphicon glyphicon-home pull-right" 
