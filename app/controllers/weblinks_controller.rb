@@ -5,6 +5,9 @@ class WeblinksController < ApplicationController
 	def index
 		@weblinks = Weblink.all.order("created_at DESC")
 	end
+	def tech
+		@weblinks = Weblink.hittech
+	end
 	def show
 	end
 	def new
@@ -19,7 +22,6 @@ class WeblinksController < ApplicationController
 		end
 	end
 	def edit
-		
 	end
 	def update
 		if @weblink.update(weblink_params)
