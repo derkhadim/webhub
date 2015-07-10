@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
   def index
-  	@weblinks = Weblink.restaurants
+  	@weblinks = Weblink.restau
   end
 end

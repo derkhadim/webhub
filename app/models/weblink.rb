@@ -3,11 +3,10 @@ class Weblink < ActiveRecord::Base
 	scope :hittech, -> { where category: 'Tech/Informatique' }
 	scope :actus, -> { where category: 'Actualité' }
 	scope :annonce, -> { where category: 'Annonce' }
-  scope :networks,  -> { where category: 'Social Netwrok' }
+  scope :networks,  -> { where category: 'Résaux Social' }
   scope :hotels,  -> { where category: 'Hotel' }
-  scope :press,  -> { where category: 'Press' }
   scope :people,  -> { where category: 'People' }
-  scope :restaurants,  -> { where category: 'Restaurants' }
+  scope :restau,  -> { where category: 'Restaurants' }
   scope :ecommerce,  -> { where category: 'E-commerce' }
   scope :fashions,  -> { where category: 'Fashion' }
   scope :freelancers,  -> { where category: 'Freelancer' }

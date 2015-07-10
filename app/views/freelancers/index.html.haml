@@ -1,8 +1,8 @@
 .container
 	.row
 		%h4 
-			%a{:href => ""}Les Sites d'informations
-		- @weblinks.actus.each do |weblink|
+			%a{:href => ""}Freelanders
+		- @weblinks.freelancers.each do |weblink|
 			.col-lg-3.col-md-4.col-sm-6.col-xs-12
 				%h2= link_to weblink.name, weblink
 				%p= weblink.description
