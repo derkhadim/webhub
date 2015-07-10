@@ -1,18 +1,29 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+    <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :fullname, required: true, autofocus: true %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+      <div class="form-group">
+        <%= f.input :fullname, required: true, autofocus: true, input_html: { class: 'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.input :password, required: true, input_html: { class: 'form-control'}, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      </div>
+      <div class="form-group">
+        <%= f.input :password_confirmation, required: true, input_html: { class: 'form-control'} %>
+      </div>
+
+      <div class="form-group">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

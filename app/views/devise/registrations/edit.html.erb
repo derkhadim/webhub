@@ -1,24 +1,34 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :fullname, required: true, autofocus: true %>
-    <%= f.input :email, required: true, autofocus: true %>
+      <div class="form-group">
+        <%= f.input :fullname, required: true, autofocus: true, input_html: { class: 'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control'} %>
+      </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+      <div class="form-group">
+        <%= f.input :password, autocomplete: "off", input_html: { class: 'form-control'}, hint: "leave it blank if you don't want to change it", required: false %>
+      <div class="form-group">
+      </div>
+        <%= f.input :password_confirmation, required: false, input_html: { class: 'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.input :current_password, input_html: { class: 'form-control'}, hint: "we need your current password to confirm your changes", required: true %>
+      </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <div class="form-group">
+        <%= f.button :submit, "Modifier" %>
+      </div>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= link_to "Back", :back %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<%= link_to "Back", :back %>
+</div>
