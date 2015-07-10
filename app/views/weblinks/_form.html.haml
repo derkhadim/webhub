@@ -8,7 +8,7 @@
 			= f.input :link, input_html: { class: 'form-control'}
 		.form-group
 			= f.select :category do
-				- [['-Aucune','-Aucune'],['Actualité', 'Actualité'], ['People', 'People'], ['Blog', 'Blog'], ['Hotel', 'Hotel'], ['Tech/Informatique', 'Tech/Informatique'], ['Social Netwrok', 'Social Netwrok']].each do |c|
+				- [['-Aucune','-Aucune'],['Annonce', 'Annonce'],['Actualité', 'Actualité'], ['People', 'People'], ['Blog', 'Blog'], ['Hotel', 'Hotel'], ['Tech/Informatique', 'Tech/Informatique'], ['Social Netwrok', 'Social Netwrok']].each do |c|
 					= content_tag(:option, c.first, value: c.last)
 			%br/
 			=f.button :submit, class: "btn btn-primary"

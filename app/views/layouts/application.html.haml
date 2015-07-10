@@ -9,16 +9,33 @@
 	%nav.navbar.navbar-default.navbar-fixed-top
 		.container
 			.navbar-brand= link_to "Webhub", root_path
-			%ul.nav.navbar-nav.navbar-left
-				%li= link_to "Actualité", actus_path
 			-if user_signed_in? 
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to current_user.fullname, edit_user_registration_path
+					%li= link_to "Ajouter un site", new_weblink_path
 					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
 			-else
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Sign In", new_user_session_path
 					%li= link_to "Sign Up", new_user_registration_path
-
 	.container
+	.container
+		.row
+			%ul.nav.navbar-nav.gap
+				%li= link_to "Annonce", annonces_path
+				%li= link_to "Blog", blogs_path
+				%li= link_to "Couture", coutures_path
+				%li= link_to "Education", educations_path
+				%li= link_to "Entreprise", entreprises_path
+				%li= link_to "E-commerce", ecommerce_index_path
+				%li= link_to "fashion", fashions_path
+				%li= link_to "Freelancer", freelancers_path
+				%li= link_to "Gouv", gouvs_path
+				%li= link_to "Hotel", hotels_path
+				%li= link_to "Press", actus_path
+				%li= link_to "People", people_path
+				%li= link_to "Restaurant", restaurants_path
+				%li= link_to "Réseau Social", networks_path
+				%li= link_to "Tech/Informatique", hittech_index_path
+		%hr/
 		= yield

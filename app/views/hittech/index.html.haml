@@ -2,9 +2,10 @@
 	.row
 		%h4 
 			%a{:href => ""}Hit Tech
-		- @weblinks.actus.each do |weblink|
+		- @weblinks.hittech.each do |weblink|
 			.col-lg-3.col-md-4.col-sm-6.col-xs-12
 				%h2= link_to weblink.name, weblink
 				%p= weblink.description
 				%a{:href => "http://"+weblink.link }= weblink.link
 				%p.small= weblink.category
+	%hr/

@@ -5,8 +5,9 @@ class WeblinksController < ApplicationController
 	def index
 		@weblinks = Weblink.all.order("created_at DESC")
 	end
-	def tech
-		@weblinks = Weblink.hittech
+
+	def total
+		@tw = Weblink.count
 	end
 	def show
 	end

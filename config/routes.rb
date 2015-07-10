@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
+  
+  resources :hittech
+  resources :networks
+  resources :hotels
+  resources :press
+  resources :people
+  resources :restaurants
+  resources :ecommerce
+  resources :fashions
+  resources :freelancers
+  resources :gouvs
+  resources :entreprises
+  resources :educations
+  resources :coutures
+  resources :blogs
+  resources :annonces
   resources :weblinks
+  resources :annonces
   resources :actus
   root 'weblinks#index'
   devise_for :users

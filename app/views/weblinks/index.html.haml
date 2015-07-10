@@ -1,13 +1,12 @@
 .row
-	%div.jumbotron.gap
-		%h1 Annuaire des sites web du Sénégal
-		= link_to "Post a website", new_weblink_path, class: "btn btn-primary"
+	%div.jumbotron
+		%h1 Annuaire de site web.
+		%p Si vous en connaissez un, intéressant, partager le !
+		= link_to "Ajouter un site", new_weblink_path, class: "btn btn-primary"
 .row
 	- @weblinks.each do |weblink|
 		.col-lg-3.col-md-4.col-sm-6.col-xs-12
 			%h2= link_to weblink.name, weblink
 			%p= weblink.description
-			%strong= weblink.category
-			%p
-				Submited by
-				= weblink.user.fullname
+			%a{:href => "http://"+weblink.link }= weblink.link
+			%p.small= weblink.category
