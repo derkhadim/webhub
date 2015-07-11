@@ -12,7 +12,6 @@
 				%i.glyphicon.glyphicon-eye-open
 				%a{:href => "http://"+@weblink.link }= @weblink.link
 				%br/
-				= @weblink.user.email
 				%strong= @weblink.user.fullname
 			.panel-footer
 				- if user_signed_in?
