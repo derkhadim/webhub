@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :abouts
   resources :hittech
   resources :networks
   resources :hotels
