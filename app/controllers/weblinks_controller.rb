@@ -3,7 +3,7 @@ class WeblinksController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show] 
 
 	def index
-		@weblinks = Weblink.all.order("created_at DESC")
+		@weblinks = Weblink.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 	end
 
 	def total

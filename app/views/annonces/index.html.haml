@@ -8,4 +8,5 @@
 				%p= weblink.description
 				%a{:href => "http://"+weblink.link }= weblink.link
 				%p.small= weblink.category
-	%hr/
+	.row
+		= will_paginate @weblinks.annonce, previous_label: "Première page", next_label: "Dernière page", inner_window: 0, outer_window: 1, renderer: BootstrapPagination::Rails

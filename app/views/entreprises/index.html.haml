@@ -2,9 +2,11 @@
 	.row
 		%h4 
 			%a{:href => ""}Entreprise
-		- @weblinks.coutures.each do |weblink|
+		- @weblinks.entreprises.each do |weblink|
 			.col-lg-3.col-md-4.col-sm-6.col-xs-12
 				%h2= link_to weblink.name, weblink
 				%p= weblink.description
 				%a{:href => "http://"+weblink.link }= weblink.link
 				%p.small= weblink.category
+	.row
+		= will_paginate @weblinks.entreprises, previous_label: "Première page", next_label: "Dernière page", inner_window: 0, outer_window: 1, renderer: BootstrapPagination::Rails
