@@ -9,6 +9,10 @@
 	.form-group
 		= f.input :description, input_html: { class: 'form-control'}
 	.form-group
+		%p Ne mettez pas www (example tappez monsite.com seulement)
+	.form-group
 		= f.input :link, input_html: { class: 'form-control'}
+	.form-group
+		%p Ne mettez pas www (example tappez monsite.com seulement)
 		%br/
 		=f.button :submit, class: "btn btn-primary"
