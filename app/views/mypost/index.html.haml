@@ -1,0 +1,10 @@
+.container
+	.row
+		- @weblinks.each do |weblink|
+			.col-lg-3.col-md-4.col-sm-6.col-xs-12
+				%h2= link_to weblink.name, weblink
+				%p= truncate(weblink.description, :length => 180)
+				%a{:href => "http://"+weblink.link }= weblink.link
+				%p.small= weblink.category
+	.row
+		= will_paginate @weblinks, previous_label: "Première page", next_label: "Dernière page", inner_window: 0, outer_window: 1, renderer: BootstrapPagination::Rails

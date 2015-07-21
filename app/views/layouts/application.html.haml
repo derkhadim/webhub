@@ -12,6 +12,7 @@
 			-if user_signed_in? 
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to current_user.fullname, edit_user_registration_path
+					%li= link_to "Mes publications", mypost_index_path
 					%li= link_to "Se deconnecter", destroy_user_session_path, method: :delete
 			-else
 				%ul.nav.navbar-nav.navbar-right
